@@ -101,7 +101,7 @@ fn get_display_refresh_rate(
                 .unwrap()
                 .current_monitor()
                 .unwrap();
-            let best_framerate = bevy::winit::get_best_videomode(&monitor).refresh_rate();
+            let best_framerate = bevy::winit::get_best_videomode(&monitor).refresh_rate_millihertz();
             if best_framerate != frame_limit.fps {
                 info!("{pre} Detected refresh rate is: {} fps", best_framerate);
                 Some(best_framerate)
